@@ -1,38 +1,34 @@
 const resultsContainer = document.querySelector(".results");
 
-const API_URL = "https://free-epic-games.p.rapidapi.com/free";
+const API_URL = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks";
 
 var rapApiKey = {
   method: "GET",
   headers: {
-    "x-rapidapi-host": "free-epic-games.p.rapidapi.com",
+    "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
     "x-rapidapi-key": "3030d0a399msh3dbee496a88de2dp1e522djsn497db0569a61",
   },
 };
 
-async function fetchEpicGames() {
+async function fetchCards() {
   try {
     const response = await fetch(API_URL, rapApiKey);
-    const json = await response.json();
-
-    console.log(json.freeGames.current);
+    const cards = await response.json();
+    console.log(cards);
 
     resultsContainer.innerHTML = "";
 
-    games = json.freeGames.current;
+    for (let i = 0; i < cards.length; i++) {
+      if (!cards[i].img === true) {
+        cards[i].name = "";
+      }
 
-    games.forEach(function (game) {
-      resultsContainer.innerHTML += `<a href="details.html?id=${game.id}" class="card">
-                                            <div class="image" style="background-image: url(${game.keyImages});"></div>
-                                            <div class="details">
-                                                <h4 class="name">${game.title}</h3>
-                                            </div>
-                                        </a>`;
-    });
+      resultsContainer.innerHTML += ` <a href="details.html?id=" class="card"><img src="${cards[i].img}" alt="${cards[i].name}"/>
+      <h2>${cards[i].name}<h2></div></a>`;
+    }
   } catch (error) {
-    console.log(error);
     resultsContainer.innerHTML = message("error", error);
   }
 }
 
-fetchEpicGames();
+fetchCards();

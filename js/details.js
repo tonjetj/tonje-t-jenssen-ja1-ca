@@ -9,7 +9,7 @@ const id = params.get("id");
 console.log(id);
 
 const url =
-  "https://free-epic-games.p.rapidapi.com/free" +
+  "https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks" +
   id +
   "?key=3030d0a399msh3dbee496a88de2dp1e522djsn497db0569a61";
 
