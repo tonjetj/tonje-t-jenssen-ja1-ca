@@ -1,23 +1,38 @@
 const resultsContainer = document.querySelector(".results");
 
-async function getNews() {
-  const API_URL =
-    "https://content.guardianapis.com/search?api-key=67323820-8840-4c99-88d1-fb0be4429732";
+const API_URL = "https://free-epic-games.p.rapidapi.com/free";
 
+var rapApiKey = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-host": "free-epic-games.p.rapidapi.com",
+    "x-rapidapi-key": "3030d0a399msh3dbee496a88de2dp1e522djsn497db0569a61",
+  },
+};
+
+async function fetchEpicGames() {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(API_URL, rapApiKey);
     const json = await response.json();
-    console.log(json.response.results);
-    resultsContainer.innerHTML = "";
-    const news = json.response.results;
 
-    for (let i = 0; i < news.length; i++) {
-      console.log(news[i].webTitle);
-      console.log(news[i].sectionName);
-    }
+    console.log(json.freeGames.current);
+
+    resultsContainer.innerHTML = "";
+
+    games = json.freeGames.current;
+
+    games.forEach(function (game) {
+      resultsContainer.innerHTML += `<a href="details.html?id=${game.id}" class="card">
+                                            <div class="image" style="background-image: url(${game.keyImages});"></div>
+                                            <div class="details">
+                                                <h4 class="name">${game.title}</h3>
+                                            </div>
+                                        </a>`;
+    });
   } catch (error) {
     console.log(error);
-    resultsContainer.innerHTML = err("error", error);
+    resultsContainer.innerHTML = message("error", error);
   }
 }
-getNews();
+
+fetchEpicGames();
