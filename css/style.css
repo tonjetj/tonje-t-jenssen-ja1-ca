@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: pink;
+  padding-top: 70px;
+  transition: all 0.5s;
+}
+
+body.scrolled {
+  background: #d3f6db;
+}
+
+body.scrolled .result {
+  background: pink;
+}
+
+nav {
+  display: flex;
+  background: #d3f6db;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 1s;
+}
+
+.logo {
+  color: green;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+nav.scrolled {
+  background: white;
+  padding: 0.5rem 1rem;
+}
+
+nav.scrolled a {
+  color: black;
+}
+
+nav.scrolled .logo {
+  color: green;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a.scrolled {
+  color: black;
+}
+
+.logo {
+  font-size: 26px;
+}
+
+.menu {
+  margin-left: 50rem;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.menu a {
+  margin-left: 0.5rem;
+}
+
+h1 {
+  margin-left: 1.3rem;
+  color: white;
+}
+
+h2 {
+  color: black;
+  font-weight: bold;
+  padding-bottom: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+p {
+  font-weight: bolder;
+  color: green;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.result {
+  margin: 1rem;
+  padding: 30px;
+  max-width: 300px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.loader {
+  margin-left: 1rem;
+  border: 5px dotted #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px dotted green;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  padding: 1rem;
+  border: 2px solid brown;
+  background-color: pink;
+}
