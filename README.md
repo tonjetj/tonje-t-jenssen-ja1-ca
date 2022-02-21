@@ -44,6 +44,5 @@ Contact.html:
   * subject - must have a value with a minimum length of 10
   * Email - must have a value and be formatted like an email address. 
   * address - must have a value with a minimum length of 25. 
-! When the form on this page is submitted, write code to validate the input. If any of the inputs fail validation display an error message for the relevant input. 
-! If validation passes, add a message above the form indicating the form passed validation. 
+* When the form on this page is submitted, write code to validate the input. If any of the inputs fail validation display an error message for the relevant input. If validation passes, add a message above the form indicating the form passed validation. 
 
