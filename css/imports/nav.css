@@ -4,7 +4,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  transition: all 2s smooth;
+  transition: all 2s;
 }
 
 nav a {
@@ -25,7 +25,6 @@ nav a.active {
 
 nav.scrolled {
   background: black;
-  transition: smooth;
 }
 
 nav.scrolled a {
