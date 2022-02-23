@@ -1,0 +1,20 @@
+@import "./imports/nav.css";
+@import "./imports/results.css";
+@import "./imports/loader.css";
+@import "./imports/contactForm.css";
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: pink;
+  padding-top: 70px;
+  transition: all 3s;
+  scroll-behavior: smooth;
+}
+
+body.scrolled {
+  background: #d3f6db;
+}
+
+body.scrolled .result {
+  background: pink;
+}

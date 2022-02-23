@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  background: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 2s smooth;
+}
+
+nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+nav a.active {
+  padding: 15px 16px;
+  background-color: azure;
+  color: black;
+}
+
+nav.scrolled {
+  background: black;
+  transition: smooth;
+}
+
+nav.scrolled a {
+  color: white;
+  font-size: 15px;
+}
+
+nav.scrolled a.active {
+  background-color: azure;
+  color: black;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
