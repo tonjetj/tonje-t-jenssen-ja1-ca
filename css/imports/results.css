@@ -10,23 +10,35 @@
 }
 
 .card {
-  background-color: rgb(255, 255, 255);
   margin: 5px auto;
-  display: inline-flex;
   width: 33%;
 }
-div.details {
-  padding: 20px;
+
+.background-image {
+  height: 220px;
+  background-size: 50%;
+  background-repeat: no-repeat;
 }
-.card:hover {
+
+div.details {
+  padding: 10px;
+  background: white;
+  text-align: center;
+  border-radius: 10px;
+}
+div.details:hover {
   background-color: lightcoral;
   color: white;
   border: solid 1px rgb(236, 133, 181);
   box-shadow: 0 0 5px 0 lightslategray;
 }
 
-body.scrolled .card:hover {
+body.scrolled div.details:hover {
   background-color: rgb(80, 230, 155);
   color: rgb(0, 0, 0);
   border: solid 1px rgb(171, 219, 175);
+}
+
+.name {
+  font-size: 20px;
 }

@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
 form {
   padding: 2em;
   background: white;
@@ -18,11 +13,11 @@ input {
   width: 100%;
   margin-top: 2px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 button {
-  background: rgb(11, 91, 133);
+  background: rgb(0, 0, 0);
   border: none;
   width: 200px;
   padding: 1rem;
@@ -40,13 +35,33 @@ label {
 .form-error {
   display: none;
   color: red;
-  font-size: 0.9rem;
+  font-size: 18px;
   margin-top: 2px;
 }
 
 .form-success {
   display: none;
-  color: rgb(0, 129, 50);
   font-size: 2rem;
   margin-top: 2px;
+}
+
+.message {
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.message.error {
+  border-color: red;
+  color: red;
+}
+
+.message.success {
+  border-color: green;
+  color: green;
+}
+
+button:disabled {
+  background: lightgray;
 }

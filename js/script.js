@@ -1,42 +1,52 @@
+const searchField = document.querySelector(".search");
+const container = document.querySelector(".container");
 const resultsContainer = document.querySelector(".results");
 
-const API_URL = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks";
+const API_URL = "https://covid-19-statistics.p.rapidapi.com/reports";
 
-var rapApiKey = {
+const rapApiKey = {
   method: "GET",
   headers: {
-    "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
+    "x-rapidapi-host": "covid-19-statistics.p.rapidapi.com",
     "x-rapidapi-key": "3030d0a399msh3dbee496a88de2dp1e522djsn497db0569a61",
   },
 };
 
-async function fetchCards() {
+async function fetchCountry() {
   try {
     const response = await fetch(API_URL, rapApiKey);
-    const cards = await response.json();
-    console.log(cards);
+    const country = await response.json();
+    console.log(country.data);
+
+    const countries = country.data;
 
     resultsContainer.innerHTML = "";
 
-    for (let i = 0; i < cards.length; i++) {
-      if (i === 60) {
-        break;
+    for (let i = 0; i < countries.length; i++) {
+      if (countries[i].region.province === "Unknown") {
+        continue;
       }
 
-      resultsContainer.innerHTML += `<a href="details.html?id=${cards[i].id}" class="card">
-                                        <div class="image" style="background-image: url(${cards[i].img});"></div>
+      if (
+        !countries[i].region.province ||
+        countries[i].region.province === "string"
+      ) {
+        continue;
+      }
+      resultsContainer.innerHTML += `<a href="details.html?name=${countries[i].region.name}&province=${countries[i].region.province}" class="card">
                                               <div class="details">
-                                                  <h2 class="name">${cards[i].name}</h2>
+                                              <p class="name">${countries[i].region.province}, <b>${countries[i].region.name}</b> </p>
                                               </div>
                                         </a>
       `;
     }
   } catch (error) {
+    console.log(error);
     resultsContainer.innerHTML = message("error", error);
   }
 }
 
-fetchCards();
+fetchCountry();
 
 const nav = document.querySelector("nav");
 
@@ -45,7 +55,7 @@ function handleScroll() {
 
   const scrolledY = window.scrollY;
 
-  if (scrolledY > 10) {
+  if (scrolledY > 100) {
     document.body.classList.add("scrolled");
     nav.classList.add("scrolled");
   } else {
@@ -57,3 +67,5 @@ function handleScroll() {
 window.onscroll = handleScroll;
 
 window.addEventListener("scroll", handleScroll);
+
+resultsContainer.addEventListener;

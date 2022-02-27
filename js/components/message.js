@@ -1,3 +1,3 @@
-function message(messageType = "success", message = "") {
+function message(messageType = "error", message = "") {
   return `<div class="alert ${messageType}">${message}</div>`;
 }
