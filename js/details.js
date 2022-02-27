@@ -16,7 +16,7 @@ async function fetchDetails() {
     const response = await fetch(url, rapApiKey);
     const info = await response.json();
 
-    // I only get undefined shown as value if I don't pass in [] with a random number inside it. Don't knwo how to make the [i] dynamic and show the results on whatever country and province i click on at the index.html page...
+    // I only get undefined shown as value if I don't pass in square brackets [] with a random number inside it. Don't know how to make the [i] dynamic and show the results on whatever country and province I click on at the index.html page...
 
     console.log(info.data[100]);
     let country = info.data[100];
