@@ -46,7 +46,9 @@ body.scrolled div.details:hover {
 .back {
   text-transform: uppercase;
   font-size: 20px;
-  margin-bottom: 20px;
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 140px;
   font-weight: bolder;
 }
 
@@ -59,6 +61,7 @@ body.scrolled div.details:hover {
   padding: 10px;
   background-color: white;
   border-radius: 20px;
+  margin-top: 100px;
 }
 
 .detail h2,

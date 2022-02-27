@@ -21,10 +21,12 @@ async function fetchDetails() {
     console.log(info.data[100]);
     let country = info.data[100];
 
-    detailContainer.innerHTML = `<div class="back"><a href="index.html">< go back</a></div><div class="detail"><h2>${country.region.name}, ${country.region.iso}</h2>
-      <p>Province: ${country.region.province}</p>
-      <p>Last updated: ${country.last_update}</p>
-      <p>Deaths registered: ${country.deaths}</p></div>
+    detailContainer.innerHTML = `<div class="detail">
+          <h2>${country.region.name}, ${country.region.iso}</h2>
+          <p>Province: ${country.region.province}</p>
+          <p>Last updated: ${country.last_update}</p>
+          <p>Deaths registered: ${country.deaths}</p>
+      </div>
       `;
   } catch (error) {
     console.log(error);
