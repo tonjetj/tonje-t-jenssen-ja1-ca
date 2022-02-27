@@ -23,7 +23,7 @@ function validateForm(event) {
   event.preventDefault();
 
   if (
-    checkLength(namE.value, 0) &&
+    checkLength(namE.value, 1) &&
     checkLength(subject.value, 9) &&
     checkLength(address.value, 24) &&
     validateEmail(email.value) === true
@@ -39,7 +39,6 @@ function validateForm(event) {
     emailError.style.display = "block";
   }
 }
-
 function checkButton() {
   if (
     checkLength(namE.value, 1) &&
@@ -53,7 +52,6 @@ function checkButton() {
     button.disabled = true;
   }
 }
-
 function checkLength(value, len) {
   if (value.trim().length > len) {
     return true;
